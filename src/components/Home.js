@@ -39,7 +39,7 @@ export default class Home extends Component {
                 }
             },
             {
-                Header: "id",
+                Header: "Symbol",
                 accessor: "symbol",
             },
             {
@@ -57,26 +57,30 @@ export default class Home extends Component {
                 }
             },
             {
-              Header: "rank-mcap",
-              accessor: "rank_mcap"
-            },
-            {
-              Header: "rank-change",
-              accessor: "rank_change"
-            },
-            {
-                Header: "rank-ratio",
-                accessor: "rank_ratio",
-                Cell: e =>{
-                    return typeof(e.value) === "number" ? e.value.toFixed(4) : "not available"
-                    }
-              }
-          ]
-        }
+            Header: "Ranks",
+              columns: [
+                                    {
+                                    Header: "mcap",
+                                    accessor: "rank_mcap"
+                                    },
+                                    {
+                                    Header: "change",
+                                    accessor: "rank_change"
+                                    },
+                                    {
+                                        Header: "ratio",
+                                        accessor: "rank_ratio",
+                                        Cell: e =>{
+                                            return typeof(e.value) === "number" ? e.value.toFixed(4) : "not available"
+                                            }
+                                    }
+                                ]
+            }
+       ]}
       defaultPageSize={100}
       className="-striped -highlight"
       style={{
-        height: "100vh" 
+        height: "95vh" 
       }}
     />
       </div>

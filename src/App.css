@@ -13,3 +13,86 @@ body {
       monospace;
   }
   
+  #wrapper {
+    position: relative;
+    padding-top: 20px;
+    background: #000524;
+    border: 1px solid #000;
+    box-shadow: 0 22px 35px -16px rgba(0, 0, 0, 0.71);
+    max-width: 850px;
+    margin: 35px auto;
+  }
+  
+  #chart-bar {
+    position: relative;
+    margin-top: -38px;
+  }
+  
+  .link {
+    position: absolute;
+    bottom: 7px;
+    right: 13px;
+    z-index: 10;
+    color: #ccc;
+    font-size: 12px;
+    text-decoration: none;
+    font-family: Helvetica, Arial;
+  }
+
+  /*###########################################################################################################################*/
+
+  @media only screen and (min-width: 320px)and (max-width: 480px){
+    /* Coin */
+    div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-thead.-header:nth-child(2) div.rt-tr > div.rt-th.rt-resizable-header.-cursor-pointer:nth-child(1){
+      max-width: 20vw;
+    }
+
+     /* symbol */
+     div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-thead.-header:nth-child(2) div.rt-tr > div.rt-th.rt-resizable-header.-cursor-pointer:nth-child(2){
+       display:none;
+     }
+
+    div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-tbody:nth-child(3) div.rt-tr-group > div.rt-tr> div.rt-td:nth-child(2){
+      margin-top: 20px;
+      margin-left: -30vw;
+      border: none;
+    }
+    /* Price */
+    div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-thead.-header:nth-child(2) div.rt-tr > div.rt-th.rt-resizable-header.-cursor-pointer:nth-child(4){
+      margin-top: 30px;
+      margin-left: -50vw;
+      border-right: none;
+      border-top: 1.5px solid rgba(0,0,0,0.02)
+    }
+
+    div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-tbody:nth-child(3) div.rt-tr-group > div.rt-tr> div.rt-td:nth-child(4){
+      margin-top: 30px;
+      margin-left: -60vw;
+    }
+
+    /* change */
+    div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-thead.-header:nth-child(2) div.rt-tr > div.rt-th.rt-resizable-header.-cursor-pointer:nth-child(6){
+      margin-top: 30px;
+      margin-left: -39vw;
+      border-right: none;
+      border-top: 1.5px solid rgba(0,0,0,0.02)
+    }
+    div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-tbody:nth-child(3) div.rt-tr-group > div.rt-tr> div.rt-td:nth-child(6){
+      margin-top: 30px;
+      margin-left: -30vw;
+    }
+
+    /* ratio */
+    div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-thead.-header:nth-child(2) div.rt-tr > div.rt-th.rt-resizable-header.-cursor-pointer:nth-child(7){
+      margin-top: 60px;
+      margin-left: -39vw;
+      border-right: none;
+      border-top: 1.5px solid rgba(0,0,0,0.02)
+    }
+    div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-tbody:nth-child(3) div.rt-tr-group > div.rt-tr> div.rt-td:nth-child(7){
+      margin-top: 60px;
+      margin-left: -30vw;
+    }
+
+}
+
