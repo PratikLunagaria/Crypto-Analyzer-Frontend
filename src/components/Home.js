@@ -29,6 +29,9 @@ export default class Home extends Component {
       data={this.state.data}
       noDataText="Oh No!"
       columns={[
+        {
+            Header: "Info",
+              columns: [
             {
               Header: "Coin",
               accessor: "name",
@@ -55,7 +58,7 @@ export default class Home extends Component {
               Cell: e =>{
                 return typeof(e.value) === "number" ? e.value.toFixed(4) : "not available"
                 }
-            },
+            }]},
             {
             Header: "Ranks",
               columns: [
@@ -80,7 +83,7 @@ export default class Home extends Component {
       defaultPageSize={100}
       className="-striped -highlight"
       style={{
-        height: "95vh" 
+        height: "100vh" 
       }}
     />
       </div>

@@ -41,58 +41,117 @@ body {
 
   /*###########################################################################################################################*/
 
-  @media only screen and (min-width: 320px)and (max-width: 480px){
+  @media only screen and (min-width: 320px) and (max-width: 480px){
+    /* Parent Props */
+    div.rt-thead {
+      display: block !important;
+    }
+
+    div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-thead.-header:nth-child(2) div.rt-tr div.rt-th.rt-resizable-header.-cursor-pointer> div.rt-resizer{
+      display:none;
+    }
+
+    /* TOP HEADER */
+    div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-thead.-headerGroups:nth-child(1) div.rt-tr > div.rt-th {
+      display: flex !important;
+    }
+
+    div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-thead.-headerGroups:nth-child(1) div.rt-tr > div.rt-th:nth-child(1)
+    {
+      display: inline-block;
+      max-width: 63vw;
+    }
+
+    div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-thead.-headerGroups:nth-child(1) div.rt-tr > div.rt-th:nth-child(2){
+      display: inline-block;
+      max-width: 37vw;
+    }
+
+    /* TABLE HEADER */
+    div.App div:nth-child(1) div.ReactTable.-striped.-highlight div.rt-table > div.rt-thead.-header:nth-child(2),
+    div.App div:nth-child(1) div.ReactTable.-striped.-highlight div.rt-table div.rt-thead.-header:nth-child(2) > div.rt-tr,
+
+    div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-thead.-header:nth-child(2) div.rt-tr > div.rt-th.rt-resizable-header.-cursor-pointer,
+
+    div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-tbody:nth-child(3) div.rt-tr-group> div.rt-tr,
+
+    div.rt-thead .-header, div.rt-tbody, div.ReactTable .rt-tr-group{
+      display: block !important;
+    }
+
+    div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-tbody:nth-child(3) div.rt-tr-group > div.rt-tr> div.rt-td{
+      display: block !important;
+      padding:  3px 5px;
+    }
+
     /* Coin */
     div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-thead.-header:nth-child(2) div.rt-tr > div.rt-th.rt-resizable-header.-cursor-pointer:nth-child(1){
-      max-width: 20vw;
+      width: 26vw;
+    }
+    div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-tbody:nth-child(3) div.rt-tr-group > div.rt-tr> div.rt-td:nth-child(1){
+      width: 26vw !important;
     }
 
-     /* symbol */
-     div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-thead.-header:nth-child(2) div.rt-tr > div.rt-th.rt-resizable-header.-cursor-pointer:nth-child(2){
-       display:none;
-     }
-
+    /* Symbol */
+    div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-thead.-header:nth-child(2) div.rt-tr > div.rt-th.rt-resizable-header.-cursor-pointer:nth-child(2){
+      width: 26vw;
+    }
     div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-tbody:nth-child(3) div.rt-tr-group > div.rt-tr> div.rt-td:nth-child(2){
-      margin-top: 20px;
-      margin-left: -30vw;
-      border: none;
+      width: 26vw !important;
     }
+
     /* Price */
+    div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-thead.-header:nth-child(2) div.rt-tr > div.rt-th.rt-resizable-header.-cursor-pointer:nth-child(3){
+      margin-top: -60px;
+      margin-left: 26vw;
+      min-width: 37vw;
+    }
+    div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-tbody:nth-child(3) div.rt-tr-group > div.rt-tr> div.rt-td:nth-child(3){
+      margin-top: -60px;
+      margin-left: 26vw;
+      min-width: 37vw;
+    }
+
+    /* Volume */
     div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-thead.-header:nth-child(2) div.rt-tr > div.rt-th.rt-resizable-header.-cursor-pointer:nth-child(4){
-      margin-top: 30px;
-      margin-left: -50vw;
-      border-right: none;
-      border-top: 1.5px solid rgba(0,0,0,0.02)
+      margin-left: 26vw;
+      min-width: 37vw;
     }
-
     div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-tbody:nth-child(3) div.rt-tr-group > div.rt-tr> div.rt-td:nth-child(4){
-      margin-top: 30px;
-      margin-left: -60vw;
+      margin-left: 26vw;
+      min-width: 37vw;
     }
 
-    /* change */
+    /* mcap */
+    div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-thead.-header:nth-child(2) div.rt-tr > div.rt-th.rt-resizable-header.-cursor-pointer:nth-child(5){
+      margin-top: -60px;
+      margin-left: 63vw;
+      min-width: 37vw;
+    }
+    div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-tbody:nth-child(3) div.rt-tr-group > div.rt-tr> div.rt-td:nth-child(5){
+      margin-top: -60px;
+      margin-left: 63vw;
+      min-width: 37vw;
+    }
+
+    /* Change */
     div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-thead.-header:nth-child(2) div.rt-tr > div.rt-th.rt-resizable-header.-cursor-pointer:nth-child(6){
-      margin-top: 30px;
-      margin-left: -39vw;
-      border-right: none;
-      border-top: 1.5px solid rgba(0,0,0,0.02)
+      margin-left: 63vw;
+      min-width: 37vw;
     }
     div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-tbody:nth-child(3) div.rt-tr-group > div.rt-tr> div.rt-td:nth-child(6){
-      margin-top: 30px;
-      margin-left: -30vw;
+      margin-left: 63vw;
+      min-width: 37vw;
     }
 
-    /* ratio */
+    /* Ratio */
     div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-thead.-header:nth-child(2) div.rt-tr > div.rt-th.rt-resizable-header.-cursor-pointer:nth-child(7){
-      margin-top: 60px;
-      margin-left: -39vw;
-      border-right: none;
-      border-top: 1.5px solid rgba(0,0,0,0.02)
+      margin-left: 63vw;
+      min-width: 37vw;
     }
     div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-tbody:nth-child(3) div.rt-tr-group > div.rt-tr> div.rt-td:nth-child(7){
-      margin-top: 60px;
-      margin-left: -30vw;
+      margin-left: 63vw;
+      min-width: 37vw;
     }
-
 }
 
