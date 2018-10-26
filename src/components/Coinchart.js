@@ -7,7 +7,7 @@ export default class CoinChart extends Component {
         this.state={
             options: {
                 chart: {
-                  id: 'coinchart-acsk',
+                  id: 'coincharts',
                   toolbar: {
                     show: true,
                     tools: {
