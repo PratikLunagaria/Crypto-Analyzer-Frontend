@@ -15,12 +15,11 @@ body {
   
   #wrapper {
     position: relative;
-    padding-top: 20px;
-    background: #000524;
-    border: 1px solid #000;
-    box-shadow: 0 22px 35px -16px rgba(0, 0, 0, 0.71);
-    max-width: 850px;
-    margin: 35px auto;
+    padding: 5%;
+    /* background: #000524; */
+    /* border: 1px solid #000; */
+    /* box-shadow: 0 22px 35px -16px rgba(0, 0, 0, 0.71); */
+    max-width: 100%;
   }
   
   #chart-bar {
@@ -39,17 +38,67 @@ body {
     font-family: Helvetica, Arial;
   }
 
-  /*###########################################################################################################################*/
+  /* Tabs */
 
-  @media only screen and (min-width: 320px) and (max-width: 480px){
+  .tab-list {
+    border-bottom: 1px solid #ccc;
+    padding-left: 0;
+    display: inline-flex
+  }
+  
+  .tab-list-item {
+    display: inline;
+    list-style: none;
+    margin-bottom: -1px;
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .tab-list-active {
+    background-color: white;
+    border: solid #ccc;
+    border-width: 1px 1px 0 1px;
+  }
+
+  .tabs{
+    display: flex;
+    flex-direction: column;
+  }
+
+  /*###########################################################################################################################*/
+  /* Removed outline from focused header elements */
+  div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-thead.-header:nth-child(2) div.rt-tr > div.rt-th.rt-resizable-header.-cursor-pointer:focus{
+    outline: none;
+  }
+
+  .ReactTable .rt-thead .rt-th.-sort-asc,
+  .ReactTable .rt-thead .rt-td.-sort-asc {
+    border-top: 2px  solid green !important;
+    border-left: 4px  solid green !important;
+    border-right: 4px  solid green !important;
+    box-shadow: none !important
+  }
+  
+  .ReactTable .rt-thead .rt-th.-sort-desc,
+  .ReactTable .rt-thead .rt-td.-sort-desc {
+    box-shadow: none !important;
+    border-bottom: 2px  solid red !important;
+    border-left: 4px  solid red !important;
+    border-right: 4px  solid red !important;
+  }
+  
+
+  @media only screen and (min-width: 320px) and (max-width: 700px){
     /* Parent Props */
-    div.rt-thead {
+    div.rt-thead, div.rt-tbody {
       display: block !important;
+      min-width: 100vw !important;
     }
 
     div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-thead.-header:nth-child(2) div.rt-tr div.rt-th.rt-resizable-header.-cursor-pointer> div.rt-resizer{
       display:none;
     }
+
+   
 
     /* TOP HEADER */
     div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-thead.-headerGroups:nth-child(1) div.rt-tr > div.rt-th {
@@ -71,13 +120,18 @@ body {
     div.App div:nth-child(1) div.ReactTable.-striped.-highlight div.rt-table > div.rt-thead.-header:nth-child(2),
     div.App div:nth-child(1) div.ReactTable.-striped.-highlight div.rt-table div.rt-thead.-header:nth-child(2) > div.rt-tr,
 
-    div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-thead.-header:nth-child(2) div.rt-tr > div.rt-th.rt-resizable-header.-cursor-pointer,
 
     div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-tbody:nth-child(3) div.rt-tr-group> div.rt-tr,
 
     div.rt-thead .-header, div.rt-tbody, div.ReactTable .rt-tr-group{
       display: block !important;
     }
+
+    div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-thead.-header:nth-child(2) div.rt-tr > div.rt-th.rt-resizable-header.-cursor-pointer{
+      display: block !important;
+      padding: 3px 5px;
+    }
+
 
     div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-tbody:nth-child(3) div.rt-tr-group > div.rt-tr> div.rt-td{
       display: block !important;
@@ -86,23 +140,23 @@ body {
 
     /* Coin */
     div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-thead.-header:nth-child(2) div.rt-tr > div.rt-th.rt-resizable-header.-cursor-pointer:nth-child(1){
-      width: 26vw;
+      min-width: 26vw;
     }
     div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-tbody:nth-child(3) div.rt-tr-group > div.rt-tr> div.rt-td:nth-child(1){
-      width: 26vw !important;
+      min-width: 26vw !important;
     }
 
     /* Symbol */
     div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-thead.-header:nth-child(2) div.rt-tr > div.rt-th.rt-resizable-header.-cursor-pointer:nth-child(2){
-      width: 26vw;
+      min-width: 26vw;
     }
     div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-tbody:nth-child(3) div.rt-tr-group > div.rt-tr> div.rt-td:nth-child(2){
-      width: 26vw !important;
+      min-width: 26vw !important;
     }
 
     /* Price */
     div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-thead.-header:nth-child(2) div.rt-tr > div.rt-th.rt-resizable-header.-cursor-pointer:nth-child(3){
-      margin-top: -60px;
+      margin-top: -50px;
       margin-left: 26vw;
       min-width: 37vw;
     }

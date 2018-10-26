@@ -13,7 +13,7 @@ export default class Home extends Component {
     }
     componentDidMount(){
         axios
-            .get("http://192.168.0.103.xip.io:5100/pvt/api/home")
+            .get("https://glossy-motif-200118.appspot.com/pvt/api/home")
             .then(response =>{
                 this.setState({
                     data: response.data['home_table'],

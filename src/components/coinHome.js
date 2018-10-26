@@ -1,54 +1,40 @@
 import React, { Component } from "react";
-import Chart from 'react-apexcharts';
 import axios from 'axios';
+import Tabs from './Tabs';
+import CoinChart from "./CoinChart";
 
 class coinHome extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      windowHeight: window.innerHeight,
+      windowWidth: window.innerWidth,
+      prevW: undefined,
+      prevH: undefined,
       currentCoin : props.match.params.id,
       parentData:[],
-      options: {
-        chart: {
-          id: 'apexchart-example',
-          toolbar: {
-            show: true,
-            tools: {
-              download: true,
-              selection: true,
-              zoom: true,
-              zoomin: true,
-              zoomout: true,
-              pan: true,
-              reset: true
-            },
-            autoSelected: 'zoom' // accepts -> zoom, pan, selection
-          }
-        },
-        xaxis: {
-          type:"datetime"
-        }
-      },
-      series: [{
-        name: 'RANK- MCap',
-        data: [[1, 30],[2, 35],[3, 40],[4, 45],[5, 50],[6, 55],[7, 60],[8, 30]]
-      },
-      {
-        name: 'RANK-Change',
-        data: [[1, 33],[2, 38],[3, 43],[4, 48],[5, 53],[6, 58],[7, 63],[8, 33]]
-      },
-      {
-        name: 'Rank-Ratio',
-        data: [[1, 30],[2, 35],[3, 40],[4, 45],[5, 50],[6, 55],[7, 60],[8, 30]]
-      }
-    ]
+      fullData: [{
+		name: 'RANK- MCap',
+		data: [[0,0]]
+	  },
+	  {
+		name: 'RANK-Change',
+		data: [[0,0]]
+	  },
+	  {
+		name: 'Rank-Ratio',
+		data: [[0,0]]
+	  }
+	]
     }
   }
 
 
-  componentDidMount(){
+  componentWillMount(){
+    this.handleResize();
+        window.addEventListener("resize", this.handleResize);
     axios
-        .get(`http://192.168.0.103.xip.io:5100/pvt/api/coins/${this.state.currentCoin}`)
+        .get(`https://glossy-motif-200118.appspot.com/pvt/api/coins/${this.state.currentCoin}`)
         .then(async(response) =>{
            await this.setState({
                 parentData: response.data,
@@ -62,7 +48,7 @@ class coinHome extends Component {
           rratio.push([Date.parse(value.dateis), value.rank_ratio.toFixed(4)]);
         })
           this.setState({
-            series: [{
+            fullData: [{
               name: 'RANK- MCap',
               data: rmcap
             },
@@ -76,15 +62,54 @@ class coinHome extends Component {
             }
           ]
           })
-        console.log(this.state.series);
     })
         .catch(err=>console.log(err));
+        
 }
+
+componentWillUnmount() {
+  window.removeEventListener("resize", this.handleResize);
+}
+
+handleResize = async() => {
+  await this.setState({
+      prevW: this.state.windowWidth,
+      prevH: this.state.windowHeight,
+      windowHeight: window.innerHeight,
+      windowWidth: window.innerWidth
+  })
+  // document.getElementById(document.getElementsByClassName('apexcharts-canvas')[0].id).style.cssText = `height: ${0.7*this.state.windowHeight} !important`;
+  // document.getElementById(document.getElementsByClassName('apexcharts-canvas')[0].id).style.cssText = `width: ${0.7*this.state.windowWidth} !important`
+  if ((Math.abs(this.state.prevW - this.state.windowWidth) >= 30 ) ||
+      (Math.abs(this.state.prevH - this.state.windowHeight) >= 30 ))
+  {
+	  window.location.reload();
+  }
+};
 
   render() {
     return (
-      <div >
-        <Chart options={this.state.options} series={this.state.series} type="scatter" />
+      <div id="wrapper">
+        <Tabs>
+          <div label="MarketCap Rank">
+            <CoinChart
+			  chart_type={this.state.fullData[0].name}
+			  chart_data={this.state.fullData[0].data}
+            />
+          </div>
+          <div label="%Change Rank">
+			<CoinChart
+				chart_type={this.state.fullData[1].name}
+				chart_data={this.state.fullData[1].data}
+			/>
+          </div>
+          <div label="Rank Ratio">
+			<CoinChart
+				chart_type={this.state.fullData[2].name}
+				chart_data={this.state.fullData[2].data}
+			/>
+          </div>
+        </Tabs>
       </div>
     )
   }
