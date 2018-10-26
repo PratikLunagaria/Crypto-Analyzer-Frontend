@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import Home from './components/Home';
-import coinHome from './components/coinHome';
+import Coinhome from './components/Coinhome';
 
 const NoMatch = () => (
   <div className="container align-items-center">
@@ -19,7 +19,7 @@ class App extends Component {
       <BrowserRouter>
         <Switch>
           <Route path="/" exact component={Home}/>
-          <Route path="/coins/:id" component={coinHome}/>
+          <Route path="/coins/:id" component={Coinhome}/>
           <Route component={NoMatch} />
         </Switch>
       </BrowserRouter>

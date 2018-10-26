@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import Chart from 'react-apexcharts';
 
-export default class CoinChart extends Component {
+class Coinchart extends Component {
     constructor(props){
         super(props);
         this.state={
             options: {
                 chart: {
-                  id: 'coincharts',
+                  id: 'coincharts-acsk',
                   toolbar: {
                     show: true,
                     tools: {
@@ -54,3 +54,5 @@ export default class CoinChart extends Component {
     )
   }
 }
+
+export default Coinchart;

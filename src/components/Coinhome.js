@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import axios from 'axios';
 import Tabs from './Tabs';
-import CoinChart from "./CoinChart";
+import Coinchart from "./Coinchart";
 
-class coinHome extends Component {
+class Coinhome extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -92,19 +92,19 @@ handleResize = async() => {
       <div id="wrapper">
         <Tabs>
           <div label="MarketCap Rank">
-            <CoinChart
+            <Coinchart
 			  chart_type={this.state.fullData[0].name}
 			  chart_data={this.state.fullData[0].data}
             />
           </div>
           <div label="%Change Rank">
-			<CoinChart
+			<Coinchart
 				chart_type={this.state.fullData[1].name}
 				chart_data={this.state.fullData[1].data}
 			/>
           </div>
           <div label="Rank Ratio">
-			<CoinChart
+			<Coinchart
 				chart_type={this.state.fullData[2].name}
 				chart_data={this.state.fullData[2].data}
 			/>
@@ -115,7 +115,7 @@ handleResize = async() => {
   }
 }
 
-export default coinHome;
+export default Coinhome;
 
 
 
