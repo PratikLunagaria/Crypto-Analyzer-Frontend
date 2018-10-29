@@ -22,6 +22,9 @@ class Coinchart extends Component {
                     autoSelected: 'zoom' // accepts -> zoom, pan, selection
                   }
                 },
+                grid: {
+                  clipMarkers: false
+                },
                 xaxis: {
                   type:"datetime"
                 }
