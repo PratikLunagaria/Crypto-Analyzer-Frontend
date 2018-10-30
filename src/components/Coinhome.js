@@ -43,8 +43,8 @@ class Coinhome extends Component {
         var rchg =[];
         var rratio =[];
         await response.data.map(value=>{
-          rmcap.push([Date.parse(value.dateis), value.rank_mcap]);
-          rchg.push([Date.parse(value.dateis), value.rank_change]);
+          rmcap.push([Date.parse(value.dateis), -value.rank_mcap]);
+          rchg.push([Date.parse(value.dateis), -value.rank_change]);
           rratio.push([Date.parse(value.dateis), value.rank_ratio.toFixed(4)]);
         })
           this.setState({
@@ -88,25 +88,20 @@ handleResize = async() => {
 };
 
   render() {
+    console.log(this.state)
     return (
       <div id="wrapper">
         <Tabs>
           <div label="MarketCap Rank">
             <Coinchart
-			  chart_type={this.state.fullData[0].name}
-			  chart_data={this.state.fullData[0].data}
+              chart_type={this.state.fullData[0].name}
+              chart_data={this.state.fullData[0].data}
             />
           </div>
-          <div label="%Change Rank">
+          <div label="Rank by Volume">
 			<Coinchart
 				chart_type={this.state.fullData[1].name}
 				chart_data={this.state.fullData[1].data}
-			/>
-          </div>
-          <div label="Rank Ratio">
-			<Coinchart
-				chart_type={this.state.fullData[2].name}
-				chart_data={this.state.fullData[2].data}
 			/>
           </div>
         </Tabs>
@@ -120,3 +115,9 @@ export default Coinhome;
 
 
 
+// <div label="Rank Ratio"></div>
+			// <Coinchart
+			// 	chart_type={this.state.fullData[2].name}
+			// 	chart_data={this.state.fullData[2].data}
+			// />
+      //     </div>

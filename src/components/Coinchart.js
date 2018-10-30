@@ -27,6 +27,13 @@ class Coinchart extends Component {
                 },
                 xaxis: {
                   type:"datetime"
+                },
+                yaxis: {
+                  labels: {
+                      formatter: function(val) {
+                          return Math.abs(val)
+                      }
+                  }
                 }
               },
               series: [{

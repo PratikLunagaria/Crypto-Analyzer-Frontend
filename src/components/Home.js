@@ -62,22 +62,22 @@ export default class Home extends Component {
             {
             Header: "Ranks",
               columns: [
-                                    {
-                                    Header: "mcap",
-                                    accessor: "rank_mcap"
-                                    },
-                                    {
-                                    Header: "change",
-                                    accessor: "rank_change"
-                                    },
-                                    {
-                                        Header: "ratio",
-                                        accessor: "rank_ratio",
-                                        Cell: e =>{
-                                            return typeof(e.value) === "number" ? e.value.toFixed(4) : "not available"
-                                            }
-                                    }
-                                ]
+                        {
+                        Header: "mcap",
+                        accessor: "rank_mcap"
+                        },
+                        {
+                        Header: "change",
+                        accessor: "rank_change"
+                        },
+                        // {
+                        //     Header: "ratio",
+                        //     accessor: "rank_ratio",
+                        //     Cell: e =>{
+                        //         return typeof(e.value) === "number" ? e.value.toFixed(4) : "not available"
+                        //         }
+                        // }
+                    ]
             }
        ]}
       defaultPageSize={100}
