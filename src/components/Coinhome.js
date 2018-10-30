@@ -34,7 +34,7 @@ class Coinhome extends Component {
     this.handleResize();
         window.addEventListener("resize", this.handleResize);
     axios
-        .get(`http://192.168.0.103:5100/pvt/api/coins/${this.state.currentCoin}`)
+        .get(`https://glossy-motif-200118.appspot.com/pvt/api/coins/${this.state.currentCoin}`)
         .then(async(response) =>{
            await this.setState({
                 parentData: response.data,
