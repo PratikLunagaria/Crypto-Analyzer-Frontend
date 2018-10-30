@@ -31,10 +31,9 @@ class Coinchart extends Component {
                 yaxis: {
                   labels: {
                       formatter: function(val) {
-                          return Math.abs(val)
+                          return Math.abs(val).toFixed(1);
                       }
                   },
-                  decimalsInFloat: 0
                 }
               },
               series: [{
