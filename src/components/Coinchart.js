@@ -33,7 +33,8 @@ class Coinchart extends Component {
                       formatter: function(val) {
                           return Math.abs(val)
                       }
-                  }
+                  },
+                  decimalsInFloat: 0
                 }
               },
               series: [{
