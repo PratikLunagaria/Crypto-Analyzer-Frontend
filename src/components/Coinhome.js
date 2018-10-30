@@ -43,9 +43,9 @@ class Coinhome extends Component {
         var rchg =[];
         var rratio =[];
         await response.data.map(value=>{
-          rmcap.push([Date.parse(value.dateis), -value.rank_mcap]);
-          rchg.push([Date.parse(value.dateis), -value.rank_change]);
-          rratio.push([Date.parse(value.dateis), value.rank_ratio.toFixed(4)]);
+          rmcap.push([Date.parse(value.dateis).toString()+"T00:00:00", -value.rank_mcap]);
+          rchg.push([Date.parse(value.dateis).toString()+"T00:00:00", -value.rank_change]);
+          rratio.push([Date.parse(value.dateis).toString()+"T00:00:00", value.rank_ratio.toFixed(4)]);
         })
           this.setState({
             fullData: [{
