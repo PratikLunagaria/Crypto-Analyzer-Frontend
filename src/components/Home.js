@@ -25,12 +25,17 @@ export default class Home extends Component {
     render() {
     return (
       <div>
+        <div className="homepage_title tooltip is-tooltip-bottom is-tooltip-multiline" data-tooltip="A Cryptocurrency Ranking tool that helps you sort coin ranks by Market Cap. and Change in the Coin price daily !">
+        <div>
+        Cryptocurrency Rankings
+        </div>
+    </div>
       <ReactTable
       data={this.state.data}
       noDataText="Oh No!"
       columns={[
         {
-            Header: "Info",
+            Header: "Info. (Click elements to sort)",
               columns: [
             {
               Header: "Coin",
@@ -53,21 +58,21 @@ export default class Home extends Component {
               }
             },
             {
-              Header: "Volume",
+              Header: "Volume(24h)",
               accessor: "usd_volume_24h",
               Cell: e =>{
                 return typeof(e.value) === "number" ? e.value.toFixed(4) : "not available"
                 }
             }]},
             {
-            Header: "Ranks",
+            Header: "Ranks By",
               columns: [
                         {
-                        Header: "mcap",
+                        Header: "Market Cap.",
                         accessor: "rank_mcap"
                         },
                         {
-                        Header: "change",
+                        Header: "Change",
                         accessor: "rank_change"
                         },
                         // {
@@ -83,7 +88,7 @@ export default class Home extends Component {
       defaultPageSize={100}
       className="-striped -highlight"
       style={{
-        height: "100vh" 
+        height: "85vh" 
       }}
     />
       </div>

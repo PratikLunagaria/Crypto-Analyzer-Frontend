@@ -88,9 +88,11 @@ handleResize = async() => {
 };
 
   render() {
-    console.log(this.state)
     return (
       <div id="wrapper">
+        <div className="CoinChartTitle">
+          <div>Scatterplots for {this.state.currentCoin}</div>
+        </div>
         <Tabs>
           <div label="MarketCap Rank">
             <Coinchart
@@ -99,10 +101,10 @@ handleResize = async() => {
             />
           </div>
           <div label="Rank by Volume">
-			<Coinchart
-				chart_type={this.state.fullData[1].name}
-				chart_data={this.state.fullData[1].data}
-			/>
+            <Coinchart
+              chart_type={this.state.fullData[1].name}
+              chart_data={this.state.fullData[1].data}
+            />
           </div>
         </Tabs>
       </div>
