@@ -35,7 +35,7 @@ export default class Home extends Component {
       noDataText="Oh No!"
       columns={[
         {
-            Header: "Info. (Click elements to sort)",
+            Header: "Click elements to sort",
               columns: [
             {
               Header: "Coin",
@@ -65,7 +65,7 @@ export default class Home extends Component {
                 }
             }]},
             {
-            Header: "Ranks By",
+            Header: "MarketCap & (%)Change Rankings",
               columns: [
                         {
                         Header: "Market Cap.",

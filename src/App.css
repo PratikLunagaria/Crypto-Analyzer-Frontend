@@ -139,7 +139,7 @@ background: linear-gradient(to right, #267871, #136a8a); /* W3C, IE 10+/ Edge, F
   @media (min-width: 0px) and (max-width: 700px){
   div.App div:nth-child(1) div.ReactTable.-striped.-highlight div.rt-table div.rt-thead.-headerGroups:nth-child(1) > div.rt-tr{
     display: grid !important;
-    grid-template-columns: 67vw 33vw !important;
+    grid-template-columns: 40vw 60vw !important;
     width: auto !important;
   }
 
@@ -169,11 +169,11 @@ background: linear-gradient(to right, #267871, #136a8a); /* W3C, IE 10+/ Edge, F
     /* TOP HEADER */
     div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-thead.-headerGroups:nth-child(1) div.rt-tr > div.rt-th:nth-child(1){
       display: inline-block !important;
-      width: 66vw !important;
+      width: 40vw !important;
     }
     div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-thead.-headerGroups:nth-child(1) div.rt-tr > div.rt-th:nth-child(2){
       display: inline-block !important;
-      width: 33vw !important;
+      width: 60vw !important;
     }
     
     
