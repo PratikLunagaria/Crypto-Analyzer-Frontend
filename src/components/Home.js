@@ -3,7 +3,16 @@ import axios from 'axios';
 import ReactTable from "react-table";
 import 'react-table/react-table.css';
 import {Link} from 'react-router-dom';
+import $ from 'jquery';
 
+const tooltips = {
+    1 : "Cryptocurrency names",
+    2 : "Cryptocurrency symbol",
+    3 : "Today's price of the Cryptocurrency(updates daily)",
+    4 : "currency volume traded in last 24 hours(USD)",
+    5 : "Rank based on Market Capitalization of the Currency within 24 hours",
+    6 : "Rank based on Volume Change in last 24h"
+}
 export default class Home extends Component {
     constructor(props){
         super(props);
@@ -12,6 +21,14 @@ export default class Home extends Component {
         }
     }
     componentDidMount(){
+        Object.keys(tooltips).map(function(element, iid){
+            $(`div.rt-thead.-header div:nth-child(1) div:nth-child(${element}) div:nth-child(1)`).append(`
+            <div class="ttp tooltip is-tooltip-bottom is-tooltip-multiline" data-tooltip="${tooltips[element]}">
+                <img src="/static/infos.png" class="info-btn" />
+            </div>
+            `);
+        })
+        
         axios
             .get("https://glossy-motif-200118.appspot.com/pvt/api/home")
             .then(response =>{
@@ -26,16 +43,16 @@ export default class Home extends Component {
     return (
       <div>
         <div className="homepage_title tooltip is-tooltip-bottom is-tooltip-multiline" data-tooltip="A Cryptocurrency Ranking tool that helps you sort coin ranks by Market Cap. and Change in the Coin price daily !">
-        <div>
-        Cryptocurrency Rankings
+            <div>
+            Cryptocurrency Rankings
+            </div>
         </div>
-    </div>
       <ReactTable
       data={this.state.data}
       noDataText="Oh No!"
       columns={[
         {
-            Header: "Click elements to sort",
+            Header: "Click header to sort",
               columns: [
             {
               Header: "Coin",

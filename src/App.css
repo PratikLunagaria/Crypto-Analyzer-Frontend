@@ -1,3 +1,14 @@
+.info-btn{
+  height: 2vh !important;
+}
+
+div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-thead.-header:nth-child(2) div.rt-tr > div.rt-th.rt-resizable-header.-cursor-pointer:nth-child(6),
+
+div.App div.ReactTable.-striped.-highlight div.rt-table div.rt-thead.-header:nth-child(2) div.rt-tr div.rt-th.rt-resizable-header.-cursor-pointer > div.rt-resizable-header-content
+{
+  overflow: visible !important;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -12,8 +23,6 @@ body {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
       monospace;
   }
-
-
 
   .target {
     cursor: pointer;
@@ -105,6 +114,47 @@ background: linear-gradient(to right, #267871, #136a8a); /* W3C, IE 10+/ Edge, F
     display: flex;
     flex-direction: column;
   }
+  /* ###################REACT_TABLE SORT ICONS################# */
+
+  .ReactTable .rt-resizable-header {
+    padding: 6px 24px !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+ 
+.ReactTable .rt-resizer:before {
+    display: inline-block;
+    position: absolute;
+    right: 25px;
+    top: 3px;
+    height: 18px;
+    width: 18px;
+    color: transparent;
+    content: '.';
+    background-size: 18px 18px;
+    background-repeat: no-repeat; 
+    opacity: 0.87;
+}
+
+.ReactTable  .rt-resizable-header-content:after {
+    position: absolute;
+    right: 8px;
+    top: 3px;
+    height: 18px;
+    width: 18px;
+    z-index: 120;
+    color: transparent;
+    content: '.';
+}
+
+.ReactTable .rt-th.-sort-asc .rt-resizer:before {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOCAxOCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAgMTVWNmw0IDQgMS0xLTYtNi02IDYgMSAxIDQtNHY5eiIgZmlsbD0iIzMzMyIvPjwvc3ZnPg==);
+}
+
+.ReactTable .rt-th.-sort-desc .rt-resizer:before {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOCAxOCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNOCAzdjkuMTNMNCA4IDMgOWw2IDYgNi02LTEtMS00IDQuMTNWM3oiIGZpbGw9IiMzMzMiLz48L3N2Zz4=);
+}
+  /* ############################# */
 
   /*###########################################################################################################################*/
   /* Removed outline from focused header elements */
@@ -133,6 +183,8 @@ background: linear-gradient(to right, #267871, #136a8a); /* W3C, IE 10+/ Edge, F
     margin-right: 17px !important;
   }
 
+
+  
 
   
 
@@ -205,5 +257,7 @@ background: linear-gradient(to right, #267871, #136a8a); /* W3C, IE 10+/ Edge, F
     /* div.rt-tbody{
       overflow-x: hidden !important;
     } */
+
+    
 }
 
