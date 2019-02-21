@@ -30,7 +30,7 @@ export default class Home extends Component {
         })
         
         axios
-            .get("https://glossy-motif-200118.appspot.com/pvt/api/home")
+            .get("http://localhost:5100/pvt/api/home")
             .then(response =>{
                 this.setState({
                     data: response.data['home_table'],
@@ -82,14 +82,14 @@ export default class Home extends Component {
                 }
             }]},
             {
-            Header: "MarketCap & (%)Change Rankings",
+            Header: "MarketCap & Volume Rankings",
               columns: [
                         {
-                        Header: "Market Cap.",
+                        Header: "MarketCap Rank",
                         accessor: "rank_mcap"
                         },
                         {
-                        Header: "Change",
+                        Header: "Volume Rank",
                         accessor: "rank_change"
                         },
                         // {
