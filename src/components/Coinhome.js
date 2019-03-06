@@ -34,7 +34,7 @@ class Coinhome extends Component {
     this.handleResize();
         window.addEventListener("resize", this.handleResize);
     axios
-        .get(`http://185.141.195.97:5100/pvt/api/coins/${this.state.currentCoin}`)
+        .get(`http://localhost:5100/pvt/api/coins/${this.state.currentCoin}`)
         .then(async(response) =>{
            await this.setState({
                 parentData: response.data,
@@ -107,6 +107,19 @@ handleResize = async() => {
             />
           </div>
         </Tabs>
+        <a href="https://cointradehistory.altcoinsidekick.com" style={
+          {
+          "backgroundColor": "#195B9D",
+          "color": "white",
+          "height": "30px",
+          "width": "100px",
+          "textAlign": "center",
+          "textJustify": "center",
+          "alignSelf": "center",
+          "justifySelf": "center"
+          }}>
+              Back
+        </a>
       </div>
     )
   }

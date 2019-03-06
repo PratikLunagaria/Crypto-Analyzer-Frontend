@@ -30,7 +30,7 @@ export default class Home extends Component {
         })
         
         axios
-            .get("http://185.141.195.97:5100/pvt/api/home")
+            .get("http://localhost:5100/pvt/api/home")
             .then(response =>{
                 this.setState({
                     data: response.data['home_table'],
